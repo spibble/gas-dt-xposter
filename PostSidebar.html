@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <?!= include('Styles.css') ?>
+  <body>
+    <div class="expo">
+      <p>
+        Upon summoning this sidebar, the cell that is highlighted will be chosen as the selected cell. Or you can enter it manually!
+      </p>
+      <p>
+        You can also optionally add an image to be sent along with the text in the selected cell in the same message.
+      </p>
+    </div>
+
+    <form enctype="multipart/form-data" id="post-form">
+      <div>
+        <label class="fixed" for="selected-cell">Selected cell:</label>
+        <input 
+          type="text" 
+          class="skinny" 
+          style="width: 30px"
+          name="selected-cell" 
+          id="selected-cell">
+      </div>
+
+      <div>
+        <label class="fixed" for="selected-image">Image:</label>
+        <br>
+        <input type="file" accept="image/*" name="selected-image" id="selected-image">
+      </div>
+
+      <div class="btn lower">
+        <button
+              class="action"
+              id="post-btn"
+              name="post-btn"
+              type="submit">
+              Post that shit
+            </button>
+      </div>
+      
+    </form>
+    <br>
+    <div class="row">
+        <div class="flow-text status" id="submit-status" hidden></div>
+    </div>
+
+    <?!= include('PostSidebar.js') ?>
+  </body>
+</html>

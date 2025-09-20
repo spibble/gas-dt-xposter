@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <?!= include('Styles.css') ?>
+  <body>
+    <p>Give me your deepest, darkest secrets...</p>
+    <p>
+      (These will be stored as script properties, which allows this app to remember them.
+      You only have to input them once unless you want to change any of the secrets to a different value.)
+    </p>
+
+    <form id="config-form">
+      <div>
+        <label class="fixed" for="discord-webhook">Discord Channel Webhook:</label>
+        <br>
+        <input type="text" class="skinny" name="discord-webhook" id="discord-webhook">
+      </div>
+      <br>
+      <div>
+        <label class="fixed" for="discord-wbhk-name">Discord Webhook Username:</label>
+        <br>
+        <input type="text" class="skinny" name="discord-wbhk-name" id="discord-wbhk-name">
+      </div>
+      <br>
+      <div>
+        <label class="fixed" for="telegram-token">Telegram Bot Token:</label>
+        <br>
+        <input type="text" class="skinny" name="telegram-token" id="telegram-token">
+      </div>
+      <br>
+      <div>
+        <label class="fixed" for="telegram-channel">Telegram Channel:</label>
+        <br>
+        <input type="text" class="skinny" name="telegram-channel" id="telegram-channel">
+      </div>
+      <br>
+      <div class="btn lower">
+        <button
+              class="action"
+              id="add-secrets-btn"
+              name="add-secrets-btn"
+              type="submit">
+              Add my secrets!
+            </button>
+      </div>
+    </form>
+    <br>
+    <div class="row">
+        <div class="flow-text status" id="submit-status" hidden></div>
+    </div>
+
+    <?!= include('ConfigSidebar.js') ?>
+  </body>
+</html>
